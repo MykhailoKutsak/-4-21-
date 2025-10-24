@@ -1,0 +1,49 @@
+// Завдання 1 Варіант 4
+
+import java.util.Scanner;  // Імпорт Scanner для введення з клавіатури
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);  // Введення з клавіатури
+
+        System.out.print("Введіть перше число: ");
+        double num1 = input.nextDouble();  // Число 1
+
+        System.out.print("Введіть операцію (+, -, *, /): ");
+        char operator = input.next().charAt(0);  // Операція
+
+        System.out.print("Введіть друге число: ");
+        double num2 = input.nextDouble();  // Число 2
+
+        double result;
+
+        // Вибір дії залежно від введеного символу
+        switch (operator) {
+            case '+':
+                 result = num1 + num2;  // Додавання
+                System.out.println("Результат: " + result);
+                break;
+
+            case '-':
+                 result = num1 - num2;  // Віднімання
+                System.out.println("Результат: " + result);
+                break;
+
+            case '*':
+                 result = num1 * num2;  // Множення
+                System.out.println("Результат: " + result);
+                break;
+
+            case '/':
+                if (num2 != 0) {  // Перевіряємо, чи не ділення на нуль
+                     result = num1 / num2;
+                    System.out.println("Результат: " + result);
+                } else {
+                    System.out.println("Ділення на нуль");
+                }
+                break;
+        }
+
+        input.close();  // Закриваємо Scanner
+    }
+}
