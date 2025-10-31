@@ -1,0 +1,29 @@
+// Завдання 3 варіант 3
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);  // В ід користувачем
+
+        System.out.print("Введіть початок діапазону: ");
+        int start = input.nextInt();  // Початквий діапазон
+
+        System.out.print("Введіть кінець діапазону: ");
+        int end = input.nextInt();  // Кінцевий діапазон
+
+        System.out.print("Введіть просте число (1-9): ");
+        int prime = input.nextInt();  // "Після введення диапазону, запитайте ввести просту цифру (простое число від 1 до 9). Виведіть всі значення у наведеному диапазоні крім чисел, які кратні введеному простому числу"
+
+        System.out.println("Результат:");
+
+        for (int i = start; i <= end; i++) {  // Перевіряємо усі числа
+            if (i % prime == 0) {  // Якщо число кратне
+                continue;  // Пропускаємо його
+            }
+            System.out.println(i);  // Виводимо некратні
+        }
+
+        input.close(); 
+    }
+}
