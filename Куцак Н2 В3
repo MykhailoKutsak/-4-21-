@@ -1,1 +1,43 @@
+import java.util.Scanner;
 
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);  // ручне введення
+
+        System.out.print("Введіть перше число: ");
+        int a = input.nextInt();  // Число 1
+
+        System.out.print("Введіть друге число: ");
+        int b = input.nextInt();  // Число 2
+
+        int x = a;
+        int y = b;
+
+        // цикл while
+        while (x != y) {  // До тих пір, доки x не = y
+            if (x > y) {
+                x = x - y;  // Від більшого x віднімаємо менший y
+            } else {
+                y = y - x;
+            }
+        }
+
+        System.out.println("НСД (через while): " + x);
+
+        // Цикл do-while
+        int m = a;
+        int n = b;
+
+        do {
+            if (m > n) {
+                m = m - n;
+            } else if (n > m) {
+                n = n - m;
+            }
+        } while (m != n);  // Повторюємо, доки m не = n
+
+        System.out.println("НСД (через do-while): " + m);
+
+        input.close();
+    }
+}
